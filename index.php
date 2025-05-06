@@ -24,6 +24,7 @@ $username = $_SESSION['username'];
         <p>Pasirinkite, ką norite daryti:</p>
         <a href="change_password.php" class="btn btn-primary m-1">A. Pakeisti slaptažodį</a>
         <a href="add_report.php" class="btn btn-warning m-1">B. Pridėti gedimo įrašą</a>
+        <a href="view_reports.php" class="btn btn-success">C. Peržiūrėti visus įrašus</a>
     </div>
 </div>
 
