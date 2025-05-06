@@ -25,16 +25,16 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
 
         $logger = new LoginLogger();
         $logger->log($username, true);
-        
+
         header("Location: index.php");
         exit;
     } else {
         $klaida = "Neteisingas vartotojo vardas arba slaptažodis.";
+        
+        $logger = new LoginLogger();
+        $logger->log($username, $prisijungimasPavyko);
     }
 
-    // Prisijungimo loginimas
-    $logger = new LoginLogger();
-    $logger->log($username, $prisijungimasPavyko);
 }
 ?>
 

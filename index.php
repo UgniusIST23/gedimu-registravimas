@@ -1,25 +1,30 @@
 <?php
-require 'autoload.php';
+session_start();
 
-use App\Models\Admin;
-use App\Models\RegularUser;
-use App\Services\AuthService;
+if (!isset($_SESSION['username'])) {
+    header("Location: login.php");
+    exit;
+}
 
-// Create an Admin user
-$admin = new Admin("Alice", "alice@example.com", "admin123");
-
-// Create a Regular User
-$user = new RegularUser("Bob", "bob@example.com", "user123");
-
-// Create AuthService
-$authService = new AuthService();
-
-// Admin Login
-echo $authService->authenticate($admin, "alice@example.com", "admin123") . "<br>";
-
-// Regular User Login
-echo $authService->authenticate($user, "bob@example.com", "user123") . "<br>";
-
-// Admin Logout
-echo $admin->logout();
+$username = $_SESSION['username'];
 ?>
+
+<!DOCTYPE html>
+<html lang="lt">
+<head>
+    <meta charset="UTF-8">
+    <title>Pagrindinis</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+</head>
+<body>
+
+<div class="container d-flex justify-content-center align-items-center vh-100">
+    <div class="text-center">
+        <h3>Sveiki, <?php echo htmlspecialchars($username); ?>!</h3>
+        <p>Pasirinkite, ką norite daryti:</p>
+        <a href="change_password.php" class="btn btn-primary">A. Pakeisti slaptažodį</a>
+    </div>
+</div>
+
+</body>
+</html>
