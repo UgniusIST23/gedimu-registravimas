@@ -27,9 +27,4 @@ class Database {
             die("DB connection failed: " . $e->getMessage());
         }
     }
-    //Funkcija įterpti vartotojo vardą ir rolę į DB
-    public function insertUser($name, $role) {
-        $stmt = $this->pdo->prepare("INSERT INTO users (name, role) VALUES (?, ?)");
-        $stmt->execute([$name, $role]);
-    }
 }

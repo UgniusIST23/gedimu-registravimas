@@ -16,11 +16,9 @@ $authService = new AuthService();
 
 // Admin Login
 echo $authService->authenticate($admin, "alice@example.com", "admin123") . "<br>";
-$authService->authenticateToDb($admin);
 
 // Regular User Login
 echo $authService->authenticate($user, "bob@example.com", "user123") . "<br>";
-$authService->authenticateToDb($user);
 
 // Admin Logout
 echo $admin->logout();
