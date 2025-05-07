@@ -1,5 +1,5 @@
 <?php
-require 'autoload.php';
+require __DIR__ . '/../config/autoload.php';
 use App\Services\Database;
 
 session_start();
@@ -43,6 +43,8 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
 </head>
 <body class="container py-4">
+
+<a href="index.php" class="btn btn-secondary">Grįžti į pradžią</a>
 
 <h3>Naujas gedimo įrašas</h3>
 

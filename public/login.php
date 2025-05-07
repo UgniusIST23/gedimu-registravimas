@@ -1,5 +1,5 @@
 <?php
-require 'autoload.php';
+require __DIR__ . '/../config/autoload.php';
 
 use App\Services\Database;
 use App\Services\LoginLogger;
@@ -62,6 +62,7 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
     </div>
 
     <button class="btn btn-primary" type="submit">Prisijungti</button>
+    <a href="register.php" class="btn btn-outline-primary">Registruotis</a>
 </form>
 
 <script>

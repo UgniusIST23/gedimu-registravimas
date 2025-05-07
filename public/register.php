@@ -1,5 +1,5 @@
 <?php
-require 'autoload.php';
+require __DIR__ . '/../config/autoload.php';
 use App\Services\UserRegistration;
 
 $zinute = '';
@@ -58,7 +58,9 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
     </div>
 
     <button class="btn btn-primary" type="submit">Registruotis</button>
+    <a href="login.php" class="btn btn-outline-secondary">Prisijungti</a>
 </form>
+
 
 <script>
 function generuotiSlaptazodi() {

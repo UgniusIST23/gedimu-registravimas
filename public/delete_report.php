@@ -1,5 +1,5 @@
 <?php
-require 'autoload.php';
+require __DIR__ . '/../config/autoload.php';
 use App\Services\Database;
 session_start();
 
